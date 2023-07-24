@@ -4,8 +4,8 @@ include_once __DIR__ . '/Product.php';
 
 class Nutrition extends Product
 {
-    private $weigth;
-    private $ingredients;
+    public $weigth;
+    public $ingredients;
 
     public function __construct($img, $title, $animal, $price, $weigth, $ingredients)
     {

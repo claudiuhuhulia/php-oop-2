@@ -70,10 +70,9 @@ $product_8 = new Game(
     '8,5 cm x 10 cm '
 );
 
-$products = [$product_1, $product_2, $product_3, $product_4, $product_5, $product_6, $product_7, $product_8]
-
-
-
+$products_nutrition = [$product_1, $product_2, $product_3, $product_4,];
+$products_thing = [$product_5, $product_6,];
+$products_game = [$product_7, $product_8]
 ?>
 
 <!DOCTYPE html>
@@ -93,13 +92,39 @@ $products = [$product_1, $product_2, $product_3, $product_4, $product_5, $produc
         <h3>I nostri prodotti</h3>
 
         <div class="shop d-flex flex-wrap justify-content-center">
-            <?php foreach ($products as $product) : ?>
+            <?php foreach ($products_nutrition as $product) : ?>
                 <div class="card">
                     <img src=<?= $product->getImg() ?> class="card-img-top" alt="...">
                     <div class="card-body">
                         <h3><?= $product->getTitle() ?></h3>
                         <div class="categoria"> <?= $product->getAnimal() ?></div>
                         <div class="prezzo"><strong>Prezzo: </strong><?= $product->getPrice() ?></div>
+                        <div class="peso"><strong>Peso: </strong> <?= $product->getWeigth() ?></div>
+                        <div class="ingredienti"><strong>Ingredienti: </strong> <?= $product->getIngredients() ?></div>
+                    </div>
+                </div>
+            <? endforeach ?>
+            <?php foreach ($products_thing as $product) : ?>
+                <div class="card">
+                    <img src=<?= $product->getImg() ?> class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3><?= $product->getTitle() ?></h3>
+                        <div class="categoria"> <?= $product->getAnimal() ?></div>
+                        <div class="prezzo"><strong>Prezzo: </strong><?= $product->getPrice() ?></div>
+                        <div class="materiale"><strong>Materiale: </strong> <?= $product->getMaterial() ?></div>
+                        <div class="dimensioni"><strong>Dimensioni: </strong> <?= $product->getDimension() ?></div>
+                    </div>
+                </div>
+            <? endforeach ?>
+            <?php foreach ($products_game as $product) : ?>
+                <div class="card">
+                    <img src=<?= $product->getImg() ?> class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3><?= $product->getTitle() ?></h3>
+                        <div class="categoria"> <?= $product->getAnimal() ?></div>
+                        <div class="prezzo"><strong>Prezzo: </strong><?= $product->getPrice() ?></div>
+                        <div class="caretteristiche"><strong>Caratteristiche: </strong> <?= $product->getCharacteristics() ?></div>
+                        <div class="dimensioni"><strong>Dimensioni: </strong> <?= $product->getDimension() ?></div>
                     </div>
                 </div>
             <? endforeach ?>

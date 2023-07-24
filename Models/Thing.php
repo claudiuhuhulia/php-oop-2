@@ -3,8 +3,8 @@ include_once __DIR__ . '/Product.php';
 
 class Thing extends Product
 {
-    private $material;
-    private $dimension;
+    public $material;
+    public $dimension;
 
     public function __construct($img, $title, $animal, $price, $material, $dimension)
     {

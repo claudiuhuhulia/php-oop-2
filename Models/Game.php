@@ -6,9 +6,11 @@ class Game extends Product
     private $characteristics;
     private $dimension;
 
-    public function __construct($img, $title, $animal, $price)
+    public function __construct($img, $title, $animal, $price, $characteristics, $dimension)
     {
         parent::__construct($img, $title, $animal, $price);
+        $this->setCharacteristics($characteristics);
+        $this->setDimension($dimension);
     }
     public function setDimension($dimension)
     {
