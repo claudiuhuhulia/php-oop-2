@@ -2,10 +2,10 @@
 
 class Product
 {
-    private $img;
-    private $title;
-    private $animal;
-    private $price;
+    protected $img;
+    protected $title;
+    protected $animal;
+    protected $price;
 
     public function __construct($img, $title, $animal, $price)
     {

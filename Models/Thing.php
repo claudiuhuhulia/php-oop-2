@@ -9,6 +9,8 @@ class Thing extends Product
     public function __construct($img, $title, $animal, $price, $material, $dimension)
     {
         parent::__construct($img, $title, $animal, $price);
+        $this->setMaterial($material);
+        $this->setDimension($dimension);
     }
 
     public function setMaterial($material)

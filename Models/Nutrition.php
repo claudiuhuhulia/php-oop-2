@@ -10,6 +10,8 @@ class Nutrition extends Product
     public function __construct($img, $title, $animal, $price, $weigth, $ingredients)
     {
         parent::__construct($img, $title, $animal, $price);
+        $this->setWeigth($weigth);
+        $this->setIngredients($ingredients);
     }
 
     public function setWeigth($weigth)
