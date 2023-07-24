@@ -6,7 +6,7 @@ include_once __DIR__ . '/Models/Nutrition.php';
 include_once __DIR__ . '/Models/Thing.php';
 
 $product_1 = new Nutrition(
-    'https://arcaplanet.vtexassets.com/arquivos/ids/243820/royal-canin-size-cane-mini-adult.jpg',
+    'https://arcaplanet.vtexassets.com/arquivos/ids/221840/expecial-cane-adult-light-pollo-e-riso.jpg?v=1776352586',
     'Royal Canin Mini Adult',
     'cane',
     24,
@@ -59,8 +59,18 @@ $product_7 = new Game(
     'cane',
     12,
     'Galleggia e rimbalza',
-    'ND'
+    '8,5 cm x 10 cm '
 );
+$product_8 = new Game(
+    'https://arcaplanet.vtexassets.com/arquivos/ids/223852/trixie-gatto-gioco-active-mouse-peluche.jpg',
+    'Topini di peluche Trixie',
+    'gatto',
+    4,
+    'Morbido con codina di corda',
+    '8,5 cm x 10 cm '
+);
+
+$products = [$product_1, $product_2, $product_3, $product_4, $product_5, $product_6, $product_7, $product_8]
 
 
 
@@ -73,6 +83,7 @@ $product_7 = new Game(
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
     <title>Shop</title>
 </head>
 
@@ -81,16 +92,17 @@ $product_7 = new Game(
         <h1 class="mb-5">Boolshop</h1>
         <h3>I nostri prodotti</h3>
 
-        <div class="row">
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
+        <div class="shop d-flex flex-wrap justify-content-center">
+            <?php foreach ($products as $product) : ?>
+                <div class="card">
+                    <img src=<?= $product->getImg() ?> class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h3><?= $product->getTitle() ?></h3>
+                        <div class="categoria"> <?= $product->getAnimal() ?></div>
+                        <div class="prezzo"><strong>Prezzo: </strong><?= $product->getPrice() ?></div>
                     </div>
                 </div>
-            </div>
-
+            <? endforeach ?>
         </div>
     </div>
 

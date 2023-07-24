@@ -1,0 +1,11 @@
+img{
+    height: 400px;
+    object-fit: contain;
+}
+.card{
+    flex-basis: 30%;
+}
+.shop{
+    gap: 20px;
+}
+
